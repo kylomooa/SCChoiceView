@@ -48,6 +48,7 @@ typedef enum : NSUInteger {
 }
 
 -(void)setupUI{
+    self.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.titleLabel];
     [self addSubview:self.directionImageView];
     
@@ -126,6 +127,12 @@ typedef enum : NSUInteger {
     }
     
 
+}
+#pragma mark - 刷新图层
+-(void)refreshHierarchy{
+    [self.superview addSubview:self.greyView];
+    [self.superview bringSubviewToFront:self];
+    [self.superview insertSubview:self.greyView belowSubview:self];
 }
 
 #pragma mark - 子控件
