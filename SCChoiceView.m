@@ -102,6 +102,7 @@ typedef enum : NSUInteger {
 
 #pragma mark - 点击显隐选择列表
 -(void)showOrHiddenTableView{
+    [self refreshHierarchy];
     [self tableView];
 
     if (self.directImagviewStatus == directImagviewUp) {
@@ -130,7 +131,6 @@ typedef enum : NSUInteger {
 }
 #pragma mark - 刷新图层
 -(void)refreshHierarchy{
-    [self.superview addSubview:self.greyView];
     [self.superview bringSubviewToFront:self];
     [self.superview insertSubview:self.greyView belowSubview:self];
 }
